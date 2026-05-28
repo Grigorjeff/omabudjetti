@@ -6,18 +6,21 @@ import Settings from '../../pages/Settings'
 import Stats from '../../pages/Stats'
 
 function AppRouter(props) {
-  const router = createBrowserRouter([
+    const router = createBrowserRouter([
     {
       path: "/",
       element: <MainLayout />,
       errorElement: <ErrorPage />,
       children: [
-        { path: "", element: <Items /> },
+        { path: "", 
+          element: <Items />,
+          loader: () => { return props.data } },
         { path: "stats", element: <Stats /> },
         { path: "settings", element: <Settings /> }
       ]
     }
   ])
+
 
   return (
     <RouterProvider router={router} />
