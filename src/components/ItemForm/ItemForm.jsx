@@ -41,8 +41,14 @@ function ItemForm(props) {
 
   // Käsittelee nykyisen poistamisen.
   const handleDelete = () => {
-    props.onItemDelete(values.id)
-    navigate(-1, { viewTransition: true })
+    const isConfirmed = window.confirm("Haluatko varmasti poistaa tämän?");
+    
+    if (!isConfirmed) {
+      return;
+    }
+
+    props.onItemDelete(values.id);
+    navigate(-1, { viewTransition: true });
   }
 
   return (
