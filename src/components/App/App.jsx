@@ -1,10 +1,9 @@
+import Button from '../../shared/ui/buttons'
 import Content from '../Content'
 import Header from '../Header'
 import Item from '../Item'
 import Menu from '../Menu'
 import styles from './App.module.scss'
-import Button from '../../shared/ui/buttons'
-
 
 function App() {
 
@@ -17,7 +16,7 @@ function App() {
           <Item />
           <Item />
           <Item />
-          <Button>LISÄÄ UUSI RIVI</Button>
+          <Button secondary>LISÄÄ UUSI RIVI</Button>
         </Content>
         <Menu />
       </div>
