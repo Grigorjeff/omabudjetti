@@ -1,8 +1,5 @@
 @use './' as theme;
 
-
-
-
 /* Mimimal CSS reset */
 
 html {
@@ -34,7 +31,6 @@ img {
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 
-
 body {
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
@@ -52,4 +48,16 @@ h1 {
 
 h1 span {
   opacity: 0.7;
+}
+
+:root {
+  --color-primary: #{theme.$color-primary};
+  --color-secondary: #{theme.$color-secondary};
+  --color-warning: #{theme.$color-warning};
+  --color-neutral-lightest: #{theme.$color-neutral-lightest};
+  --color-neutral-lighter: #{theme.$color-neutral-lighter};
+  --color-neutral-light: #{theme.$color-neutral-light};
+  --color-neutral: #{theme.$color-neutral};
+  --color-neutral-dark: #{theme.$color-neutral-dark};
+  --color-neutral-darkest: #{theme.$color-neutral-darkest};
 }
