@@ -1,20 +1,21 @@
+import Content from '../Content'
 import Header from '../Header'
 import Item from '../Item'
-import styles from './App.module.scss'
 import Menu from '../Menu'
-
-
+import styles from './App.module.scss'
 
 function App() {
 
-    return (
+  return (
     <>
       <div className={styles.app}>
         <Header />
-        <Item />
-        <Item />
-        <Item />
-        <Item />
+        <Content>
+          <Item />
+          <Item />
+          <Item />
+          <Item />
+        </Content>
         <Menu />
       </div>
     </>
