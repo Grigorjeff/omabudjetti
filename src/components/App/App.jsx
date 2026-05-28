@@ -1,15 +1,20 @@
 import Item from '../Item'
-import './App.css'
+import styles from './App.module.scss'
+
 
 function App() {
 
-  return (
+    return (
     <>
-      <div>
-                <Item />
+      <div className={styles.app}>
+        <Item />
+        <Item />
+        <Item />
+        <Item />
       </div>
     </>
   )
+
 }
 
 export default App
