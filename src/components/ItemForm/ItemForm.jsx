@@ -41,14 +41,8 @@ function ItemForm(props) {
 
   // Käsittelee nykyisen poistamisen.
   const handleDelete = () => {
-    const isConfirmed = window.confirm("Haluatko varmasti poistaa tämän?");
-    
-    if (!isConfirmed) {
-      return;
-    }
-
-    props.onItemDelete(values.id);
-    navigate(-1, { viewTransition: true });
+    props.onItemDelete(values.id)
+    navigate(-1, { viewTransition: true })
   }
 
   return (
@@ -59,10 +53,10 @@ function ItemForm(props) {
             <div>
               <label htmlFor='type'>Kulutyyppi</label>
               <select id='type' name='type' onChange={handleChange} value={values.type}>
-                <option>Puhelin</option>
-                <option>Sähkö</option>
-                <option>Vesi</option>
-                <option>Vero</option>
+                <option value="">(valitse)</option>
+                { props.typelist.map(
+                  type => <option key={type}>{type}</option>
+                )}
               </select>
             </div>
           </div>
