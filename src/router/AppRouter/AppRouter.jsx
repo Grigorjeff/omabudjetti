@@ -3,6 +3,7 @@ import AddItem from '../../pages/AddItem'
 import EditItem from '../../pages/EditItem'
 import ErrorPage from '../../pages/ErrorPage'
 import Items from '../../pages/Items'
+import Loader from '../../pages/Loader'
 import MainLayout from '../../layout/MainLayout'
 import Settings from '../../pages/Settings'
 import Stats from '../../pages/Stats'
@@ -41,13 +42,13 @@ import Stats from '../../pages/Stats'
  *   onTypeSubmit={handleTypeSubmit}
  * />
  */
-
 function AppRouter(props) {
   const router = createBrowserRouter([
     {
       path: "/",
       element: <MainLayout />,
       errorElement: <ErrorPage />,
+      hydrateFallbackElement: <Loader />,
       children: [
         { path: "",
           element: <Items />,
@@ -70,9 +71,7 @@ function AppRouter(props) {
         { path: "stats", element: <Stats data={props.data} /> },
         { path: "settings",
           element: <Settings typelist={props.typelist}
-                             onTypeSubmit={props.onTypeSubmit}
-                             user={props.user}
-                             auth={props.auth} /> }
+                             onTypeSubmit={props.onTypeSubmit} /> }
       ]
     }
   ])
